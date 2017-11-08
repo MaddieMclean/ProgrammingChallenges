@@ -8,7 +8,7 @@ import (
 func threes(n int) string {
 
 	if n == 1 {
-		return "done/n"
+		return "done\n"
 	}
 
 	remainder := n % 3
