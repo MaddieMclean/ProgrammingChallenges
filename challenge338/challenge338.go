@@ -40,12 +40,35 @@ func readFile(path string) string {
 
 func buildGameBoard(content string) []string {
 	gameBoard := strings.Split(content, "\n")
-
 	return gameBoard
 }
 
 func explore(m maze) {
 	fmt.Println(m.name)
+	displayBoard(m)
+	
+	e := findExplorer(m)
+
+}
+
+func displayBoard(m maze) {
+	for _, line := range m.gameBoard {
+		fmt.Println(line)
+	}	
+}
+
+func findExplorer(m maze ) explorer{
+	for i, line := range m.gameBoard {
+		for j, char := range line {
+			if avatar(string(char)) {
+				e := explorer{j, i, char}
+			}
+		}
+	}	
+}
+
+func avatar(char string) bool{
+
 }
 
 func check(e error) {
